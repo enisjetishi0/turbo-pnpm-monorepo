@@ -1,12 +1,37 @@
 {
-  "name": "your-monorepo",
+  "name": "turbo-pnpm-monorepo",
+  "version": "0.0.0",
   "private": true,
+  "description": "A modern monorepo starter template with Turborepo, pnpm, React (Vite), and NestJS",
+  "keywords": [
+    "monorepo",
+    "turborepo",
+    "pnpm",
+    "react",
+    "nestjs",
+    "typescript",
+    "vite",
+    "starter-template"
+  ],
+  "license": "MIT",
+  "author": "",
+  "repository": {
+    "type": "git",
+    "url": ""
+  },
+  "engines": {
+    "node": ">=18.0.0",
+    "pnpm": ">=9.0.0"
+  },
   "packageManager": "pnpm@9.0.0",
   "scripts": {
     "dev": "turbo dev",
     "build": "turbo build",
     "lint": "turbo lint",
-    "format": "prettier --write ."
+    "format": "prettier --write .",
+    "format:check": "prettier --check .",
+    "typecheck": "turbo typecheck",
+    "clean": "turbo clean && rm -rf node_modules"
   },
   "devDependencies": {
     "@typescript-eslint/eslint-plugin": "^8.50.0",
