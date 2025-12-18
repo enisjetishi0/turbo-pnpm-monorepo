@@ -49,7 +49,7 @@ A modern monorepo setup using Turborepo and pnpm workspaces. This project demons
 ### Prerequisites
 
 - Node.js 18+ or 20+
-- pnpm 9.0.0+
+- pnpm 10.26.0+
 
 ### Setup
 
