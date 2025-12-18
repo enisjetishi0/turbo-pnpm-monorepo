@@ -11,19 +11,26 @@ A modern monorepo setup using Turborepo and pnpm workspaces. This project demons
 - **Monorepo**: Turborepo + pnpm workspaces
 - **Frontend**: React + Vite + TypeScript
 - **Backend**: NestJS + TypeScript
+- **Testing**: Vitest + React Testing Library
 - **Linting**: ESLint + Prettier
 - **Build System**: Turbo (parallel builds with caching)
+- **CI/CD**: GitHub Actions
+- **Docker**: Multi-stage builds with docker-compose
 
 ---
 
 ## Features
 
 - Unified development environment for frontend and backend
-- Shared ESLint configuration across all packages
+- Shared TypeScript configurations and types across all packages
+- Testing setup with Vitest and React Testing Library
+- Pre-commit hooks with Husky and lint-staged
 - Parallel build execution with Turborepo
 - Fast installs and efficient disk usage with pnpm
 - Hot module replacement for both web and API
 - TypeScript throughout the entire stack
+- Docker support for development and production
+- CI/CD with GitHub Actions
 
 ---
 
@@ -71,13 +78,41 @@ pnpm lint
 
 ### Running Individual Apps
 
-```bash
+````bash
 # Run only the web app
-pnpm --filter web dev
+pnp
+
+### Available Scripts
+
+```bash
+# Development
+pnpm dev          # Run all apps in dev mode
+pnpm build        # Build all apps
+
+# Testing
+pnpm test         # Run all tests
+pnpm test:watch   # Run tests in watch mode
+.github/
+│   └── workflows/    # GitHub Actions CI/CD
+├── apps/
+│   ├── api/          # NestJS backend
+│   └── web/          # React + Vite frontend
+├── packages/
+│   ├── eslint-config/      # Shared ESLint configuration
+│   ├── typescript-config/  # Shared TypeScript configurations
+│   └── types/              # Shared TypeScript types
+├── .husky/           # Git hooks
+├── docker-compose.yml      # Production Docker setup
+├── docker-compose.dev.yml  # Development Docker setup
+
+# Docker
+docker-compose up              # Run production build
+docker-compose -f docker-compose.dev.yml up  # Run in development mode
+```m --filter web dev
 
 # Run only the API
 pnpm --filter api dev
-```
+````
 
 ---
 

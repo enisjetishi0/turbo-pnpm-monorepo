@@ -1,0 +1,40 @@
+services:
+  web:
+    build:
+      context: .
+      dockerfile: apps/web/Dockerfile
+    ports:
+      - '5173:80'
+    environment:
+      - VITE_API_URL=http://localhost:3000
+    depends_on:
+      - api
+
+  api:
+    build:
+      context: .
+      dockerfile: apps/api/Dockerfile
+    ports:
+      - '3000:3000'
+    environment:
+      - NODE_ENV=production
+      - PORT=3000
+    # Uncomment and configure if using a database
+    # depends_on:
+    #   - db
+
+  # Uncomment if using PostgreSQL
+  # db:
+  #   image: postgres:16-alpine
+  #   ports:
+  #     - '5432:5432'
+  #   environment:
+  #     POSTGRES_USER: postgres
+  #     POSTGRES_PASSWORD: postgres
+  #     POSTGRES_DB: myapp
+  #   volumes:
+  #     - postgres_data:/var/lib/postgresql/data
+
+# Uncomment if using volumes
+# volumes:
+#   postgres_data:
