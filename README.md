@@ -46,9 +46,15 @@ A modern monorepo setup using Turborepo and pnpm workspaces. This project demons
 
 ### Setup
 
+1. Click **Code → Download ZIP** on this repository
+2. Extract the archive
+3. Rename the folder to your project name
+4. Open the project folder and initialize Git:
+
 ```bash
-git clone <your-repository-url>
-cd turbo-pnpm-monorepo
+git init
+git add .
+git commit -m "Initial project setup"
 
 # Install dependencies
 pnpm install
@@ -86,4 +92,11 @@ turbo-pnpm-monorepo/
 │   └── eslint-config/ # Shared ESLint configuration
 ├── turbo.json        # Turborepo pipeline configuration
 └── pnpm-workspace.yaml # pnpm workspace definition
+```
+
+### A short note for contributors
+
+```md
+> ℹ️ This repository is a **starter template**.  
+> Downloading the ZIP is recommended. Clone only if you intend to contribute.
 ```
